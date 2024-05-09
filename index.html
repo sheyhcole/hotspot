@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAUTECH Hotspot Login</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/fontawesome-all.min.css">
+    <link rel="stylesheet" type="text/css" href="css/iofrm-style.css">
+    <link rel="stylesheet" type="text/css" href="css/iofrm-theme3.css">
+    <style type="text/css">
+        .table td, .table th {
+            padding: 0.25rem;
+
+        }
+        .table-bordered td, .table-bordered th {
+            border: 1px solid #bf9f61;
+        }
+    </style>
+</head>
+<body>
+    $(if chap-id)
+    <form name="sendin" action="$(link-login-only)" method="post">
+        <input type="hidden" name="username" />
+        <input type="hidden" name="password" />
+        <input type="hidden" name="dst" value="https://lautech.edu.ng" />
+        <input type="hidden" name="popup" value="true" />
+    </form>
+    
+    <script type="text/javascript" src="/md5.js"></script>
+    <script type="text/javascript">
+    <!--
+        function doLogin() {
+        document.sendin.username.value = document.login.username.value;
+        document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+        document.sendin.submit();
+        return false;
+        }
+    //-->
+    </script>
+$(endif)
+    <div class="form-body">
+        
+        <div class="row">
+            <div class="img-holder">
+                <div class="bg"></div>
+                <div class="info-holder">
+
+                </div>
+            </div>
+            <div class="form-holder">
+                <div class="alert alert-danger alert-dismissible fade show with-icon" role="alert" style="margin:20px 20px 20px 20px; color: #F55050; font-size:16px;">
+                    Identity Theft : It is a punishable offense under the LAUTECH Network Acceptable Use Policy
+                </div>
+                <div class="form-content">
+                    <div class="row">
+                            
+                            <div class="form-items">
+                                <div class="logo" style="text-align:center" >
+                                        <img class="logo-size" src="images/logo.png" alt="" width="223px">
+                                    </div>
+
+                                <h3 style="text-align:center; color: #BF9F61;">Internet Service Logon</h3>                    
+                                <p>$(if error)<br /><div style="color: #FF8080; font-size: 12px"><B>$(error)</B></div>$(endif)<br /></p>
+                                    
+                                
+                              <form method="post" action="$(link-login-only)" $(if chap-id) onSubmit="return doLogin()" $(endif)>
+                                <input type="hidden" name="dst" value="$(link-orig)" />
+                                <input type="hidden" name="popup" value="true" />
+                                <input class="form-control" type="text" name="username" placeholder="Username" required value="$(username)">
+                                <input class="form-control" type="password" name="password" placeholder="Password" required>
+                                <div class="form-button" style="text-align:center;">
+                                    <button id="submit" type="submit" class="ibtn" style="background-color: #be9e60;">Login</button> 
+                                </div>
+                                </form>  
+                                 <a style="color: #000000; font-size: 13px; background-color: #FFFFFF;" 
+                                                HREF="soft/subscription_form.pdf">New User? Click Here </a> 
+                                <p>$(if error)<br /><div style="color: #FF8080; font-size: 9px">$(error)</div>$(endif)</p>
+                                <table class="table table-striped table-bordered" style="font-size: 11px; ">
+                                <thead>
+                                    <tr><td colspan="3" ;="" align="Center" style="color: #D9241C; font-size: 20px; background-color: #BF9F61;"><b>New Contacts</b></td></tr>
+                                </thead>
+                                <tbody>
+                                   <tr><th>Related Matter</th>
+                                       <th>Units</th>
+                                       <th>Phone No.</th>
+                                   </tr>
+                                   <tr>
+                                    <td  >Network/Intenet</td><td >Network</td><td >09018763003</td></tr>
+                                    <tr><td >Software/Hardware</td><td >Network Operation</td><td >09018940233</td></tr>
+                                    <tr><td >Web/Portal</td><td >Web</td><td >09018916563</td></tr>
+                                    <tr><td >LAUTECH Email</td><td >Web</td><td >09015403140</td></tr>
+                                    <tr><td >ICT Training</td><td >Training</td><td >09016193317</td></tr>
+                                    <tr><td >LAUTECH Huawei Academy</td><td >Network</td><td >09015862304</td></tr>
+
+                                </tbody>
+                            </table>    
+
+                            </div>
+                            
+                        
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+<!--
+  document.login.username.focus();
+//-->
+</script>
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
