@@ -60,8 +60,7 @@ $(endif)
                                         <img class="logo-size" src="images/logo.png" alt="" width="223px">
                                     </div>  
                                 <h3 style="text-align:center; color: #BF9F61;">Internet Service Logon</h3>                    
-                                <p>$(if error)<br /><div style="color: #FF8080; font-size: 12px"><B>$(error)</B></div>$(endif)<br /></p>
-                                    
+                                <p>$(if error)<br /><div style="color: #FF8080; font-size: 12px"><B>$(error)</B></div>$(endif)<br /></p>                                   
                                 
                               <form method="post" action="$(link-login-only)" $(if chap-id) onSubmit="return doLogin()" $(endif)>
                                 <input type="hidden" name="dst" value="$(link-orig)" />
